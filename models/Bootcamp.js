@@ -9,7 +9,7 @@ const BootcampSchema = new mongoose.Schema({
         maxlength: [50, 'Name can not be more than 50 characters']
     },
     slug: String,
-    descripation: {
+    description: {
         type: String,
         required: [true, 'Please add a description'],
         maxlength: [500, 'Description can not be more than 500 characters']
@@ -23,7 +23,7 @@ const BootcampSchema = new mongoose.Schema({
     },
     phone: {
         type: String,
-        maxlength: [10, 'Please add a valid email']
+        maxlength: [20, 'Please add a valid phone']
     },
     email: {
         type: String,
@@ -36,33 +36,32 @@ const BootcampSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please add an address']
     },
-    location: {
-        // GeoJSON Point
-        type: {
-            type: String, // Don't do `{ location: { type: String } }`
-            enum: ['Point'], // 'location.type' must be 'Point'
-            required: true
-        },
-        coordinates: {
-            type: [Number],
-            required: true
-        },
-        index: '2dsphere',
-        formattedAddress: String,
-        street: String,
-        city: String,
-        state: String,
-        zipcode: String,
-        country: String        
-    },
-    carrers: {
+    // location: {
+    //     // GeoJSON Point
+    //     type: {
+    //         type: String, // Don't do `{ location: { type: String } }`
+    //         enum: ['Point'], // 'location.type' must be 'Point'
+    //         // required: true
+    //     },
+    //     coordinates: {
+    //         type: [Number],
+    //         required: true
+    //     },
+    //     formattedAddress: String,
+    //     street: String,
+    //     city: String,
+    //     state: String,
+    //     zipcode: String,
+    //     country: String        
+    // },
+    careers: {
         type: [String],
         enum: [
             'Web Development',
             'Mobile Development',
-            'UI/Ux',
+            'UI/UX',
             'Data Science',
-            'Bussiness',
+            'Business',
             'Other'
         ]
     },

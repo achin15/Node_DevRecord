@@ -14,6 +14,9 @@ connectDB();
 
 const app = express();
 
+// Body Paser
+app.use(express.json());
+
 // Dev logs Info
 if(process.env.NODE_ENV === 'development'){
     app.use(morgan('dev'));
